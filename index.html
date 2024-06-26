@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiobook/Podcast Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="podcast">
+            <img src="cover.png" alt="Podcast Cover" class="podcast-cover" draggable="true" id="cover1"><br>
+            <div class="podcast-details">
+                <p class="upload-date">JUNE 7</p>
+                <h2 class="episode-title">NPR NEWS: 06-07-2024 9PM EDT</h2>
+                <p class="podcast-name">NPR News Now</p><br>
+            </div>
+            <div class="audio-container">
+                <audio id="audioPlayer">
+                    <source src="audio/sample.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="progress-slider-container">
+                    <input type="range" id="progressSlider" class="progress-slider" min="0" max="100" step="0.1" value="0">
+                    <div class="time-display">
+                        <span id="currentTime">00:00</span>
+                        <span id="totalTime">00:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="speed-control">
+                    <button id="speedBtn" class="control-button">1×</button>
+                    <div id="speedOptions" class="speed-options">
+                        <button class="speed-option" data-speed="2">2×</button>
+                        <button class="speed-option" data-speed="1.5">1.5×</button>
+                        <button class="speed-option" data-speed="1">1×</button>
+                        <button class="speed-option" data-speed="0.75">0.75×</button>
+                    </div>
+                </div>
+                <img id="backBtn" class="control-image" src="back15.png" alt="Back">
+                <img id="pauseBtn" class="control-image" src="play.png" alt="Pause">
+                <img id="forwardBtn" class="control-image" src="forward15.png" alt="Forward">
+            </div>
+            <div class="volume-slider-container">
+                <img src="lowvolume.webp" alt="Low Volume" class="volume-icon">
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value=".5">
+                <img src="volume-icon.png" alt="Volume" class="volume-icon">
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

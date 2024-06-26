@@ -1,0 +1,223 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.podcast {
+    background: linear-gradient(to bottom, #e6e7e9 50%, #a8a8a8); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.podcast-cover {
+    width: 275px;
+    height: 275px;
+    border-radius: 10px;
+    margin: 0 auto 10px;
+}
+
+.podcast-details {
+    text-align: left;
+    width: 100%;
+    margin-left: 50px;
+    line-height: 50%;
+}
+
+.upload-date {
+    font-size: 9px;
+    margin-bottom: 2px;
+    margin-top: 20px;
+}
+
+.episode-title {
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.podcast-name {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.progress-slider-container {
+    width: 275px;
+    margin-top: 10px;
+}
+
+.progress-slider {
+    width: 100%;
+    height: 6px;
+    background-color: #ffffff99;
+    border-radius: 5px; 
+    cursor: pointer;
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+}
+
+.progress-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 1px;
+    height: 6px;
+    background-color: #a0a0a0;
+    border-radius: 0%; /* Make it square */
+    cursor: pointer;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#currentTime, #totalTime {
+    font-size: 9px;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Adjusted gap */
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    position: relative;
+}
+
+/* Style for the control images */
+.control-image {
+    width: 30px; /* Adjust the width and height as needed */
+    height: 30px;
+    cursor: pointer;
+}
+
+#pauseBtn {
+    width: 38px; /* Adjust the width as needed */
+    height: 38px; /* Adjust the height as needed */
+}
+
+
+.control-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.control-button:hover {
+    color: #000000;
+}
+.speed-control {
+    position: absolute;
+    left: 14px;
+}
+
+.speed-control button {
+    font-size: 14px; /* Smaller font size for the speed icon */
+    padding: 5px 10px; /* Adjust padding as needed */
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.speed-options {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background: #636363;
+    border: 0px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.speed-option {
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #fff;
+    border-bottom: 1px solid #666;
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+    font-size: 6px;
+}
+
+.speed-option:hover {
+    background: #b1b1b1;
+    border-radius: 5px;
+}
+
+.volume-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.volume-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.volume-slider {
+    width: 70%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #ffffff99;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1px;
+    height: 6px;
+    border-radius: 0%;
+    background: #a0a0a0;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+}
