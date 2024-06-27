@@ -46,20 +46,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     audioPlayer.addEventListener('loadedmetadata', function() {
-    const totalMinutes = Math.floor(audioPlayer.duration / 60);
-    const totalSeconds = Math.floor(audioPlayer.duration % 60);
-        
-    totalTimeDisplay.textContent = `-${totalMinutes < 10 ? '0' : ''}${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`;
+    const duration = audioPlayer.duration;
+    totalTimeDisplay.textContent = formatTime(duration);
         });
         
     audioPlayer.addEventListener('timeupdate', function() {
-    // Update current time display as audio plays
-    const currentMinutes = Math.floor(audioPlayer.currentTime / 60);
-    const currentSeconds = Math.floor(audioPlayer.currentTime % 60);
-        
-    currentTimeDisplay.textContent = `${currentMinutes < 10 ? '0' : ''}${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+    const currentTime = audioPlayer.currentTime;
+    currentTimeDisplay.textContent = formatTime(currentTime);
         });
-
+        
+    function formatTime(seconds) {
+        const hrs = Math.floor(seconds / 3600);
+        const mins = Math.floor((seconds % 3600) / 60);
+        const secs = Math.floor(seconds % 60);
+        
+        const formattedHrs = hrs > 0 ? `${hrs}:` : '';
+        const formattedMins = mins < 10 ? `0${mins}` : mins;
+        const formattedSecs = secs < 10 ? `0${secs}` : secs;
+        
+        return `${formattedHrs}${formattedMins}:${formattedSecs}`;
+        }
           // Handle speed button click
     speedBtn.addEventListener('click', function() {
         speedOptions.style.display = (speedOptions.style.display === 'block') ? 'none' : 'block';
